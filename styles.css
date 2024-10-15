@@ -1,33 +1,56 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #1a1a1a;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Google+Sans:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #6200ea;
+    --primary-variant: #3700b3;
+    --secondary-color: #03dac6;
+    --background-color: #121212;
+    --surface-color: #1f1b24;
+    --error-color: #cf6679;
+    --on-primary: #ffffff;
+    --on-secondary: #000000;
+    --on-background: #ffffff;
+    --on-surface: #ffffff;
+    --on-error: #000000;
+}
+* {
+    box-sizing: border-box;
+}
+
+body, html {
     margin: 0;
     padding: 0;
-    color: #e0e0e0;
+    background-color: var(--background-color);
+    color: var(--on-background);
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
 h1, h2, h4 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Google Sans', sans-serif;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
+    color: var(--on-primary);
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-bottom: 20px;
+    color: var(--on-surface);
 }
 
 h4 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
+    color: var(--on-surface);
 }
 
 header.sticky {
-    background: linear-gradient(90deg, #0d47a1, #1e88e5);
-    color: white;
-    padding: 15px 30px;
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+    padding: 20px;
     position: sticky;
     top: 0;
     width: 100%;
@@ -35,22 +58,23 @@ header.sticky {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .header-container {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .profile-img img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 3px solid #e0e0e0;
-    margin-right: 15px;
+    border: 2px solid var(--on-primary);
+    margin-right: 20px;
 }
 
 .profile-name {
@@ -59,10 +83,10 @@ header.sticky {
 }
 
 .contact-link {
-    margin: 0 10px;
-    color: #e0e0e0;
+    margin: 0 15px;
+    color: var(--on-primary);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     display: inline-flex;
     align-items: center;
     transition: color 0.3s ease;
@@ -73,7 +97,7 @@ header.sticky {
 }
 
 .contact-link:hover {
-    color: #ffeb3b;
+    color: var(--secondary-color);
 }
 
 main {
@@ -85,33 +109,36 @@ main {
 .about-me {
     margin-bottom: 40px;
     padding: 20px;
-    background-color: #292929;
+    background-color: var(--surface-color);
     border-radius: 10px;
 }
 
 .about-me p {
     font-size: 1.1rem;
+    color: var(--on-surface);
 }
 
 .project-cards {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .project-card {
-    background: #424242;
-    border-radius: 10px;
+    background-color: var(--surface-color);
+    border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    width: 45%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
 
 .project-title {
@@ -129,22 +156,22 @@ main {
 .tech-icons {
     margin-top: 10px;
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 .tech-icons i {
     font-size: 1.5rem;
-    color: #29b6f6;
+    color: var(--secondary-color);
     transition: transform 0.3s ease;
 }
 
 .tech-icons i:hover {
     transform: scale(1.2);
-    color: #ffeb3b;
+    color: var(--primary-variant);
 }
 
 a.project-link {
-    color: #29b6f6;
+    color: var(--secondary-color);
     text-decoration: none;
     display: inline-block;
     margin-top: 10px;
@@ -152,6 +179,16 @@ a.project-link {
 }
 
 a.project-link:hover {
-    color: #ffeb3b;
+    color: var(--primary-color);
     transform: translateX(5px);
+}
+
+@media (max-width: 600px) {
+    .header-container, .project-cards {
+        flex-direction: column;
+    }
+
+    .project-card {
+        width: 100%;
+    }
 }
