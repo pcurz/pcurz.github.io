@@ -70,8 +70,8 @@ header.sticky {
 }
 
 .profile-img img {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     border: 2px solid var(--on-primary);
     margin-right: 20px;
