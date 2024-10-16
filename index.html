@@ -22,73 +22,63 @@
             </nav>
         </div>
     </header>
-
     <main>
         <section class="about-me">
             <h2>Sobre mí</h2>
             <p>
-                Soy <strong>Patricio Campos</strong>, estudiante de <strong>Ingeniería Civil Informática</strong> próximo a finalizar mi carrera, con experiencia en desarrollo de aplicaciones móviles utilizando <strong>Flutter</strong>, <strong>IoT</strong> y sistemas en tiempo real. A lo largo de mi trayectoria, he trabajado en proyectos que integran frontend y backend, usando tecnologías como <strong>Firebase</strong> y <strong>MQTT</strong>.
-                Mi enfoque está en crear soluciones eficientes que mejoren la experiencia de los usuarios, siempre aplicando buenas prácticas de desarrollo y arquitectura de software.
+                Soy <strong>Patricio Campos</strong>, estudiante de <strong>Ingeniería Civil Informática</strong> próximo a finalizar mi carrera, con experiencia en desarrollo de aplicaciones móviles utilizando <strong>Flutter</strong>, <strong>IoT</strong> y sistemas en tiempo real. A lo largo de mi trayectoria, he trabajado en proyectos que integran frontend y backend, usando tecnologías como <strong>Firebase</strong> y <strong>MQTT</strong>. Mi enfoque está en crear soluciones eficientes que mejoren la experiencia de los usuarios, siempre aplicando buenas prácticas de desarrollo y arquitectura de software.
             </p>
         </section>
-
-        <section class="projects">
-            <h2>Proyectos</h2>
-            <div class="project-cards">
-                <div class="project-card">
-                    <div class="project-title">
-                        <img src="icons/ucmobile.png" alt="UCalendarMobile Icono" class="project-icon">
-                        <h4>UCalendarMobile</h4>
-                    </div>
-                    <p>
-                        Aplicación móvil en <strong>Flutter</strong> para estudiantes de la <strong>Universidad Católica del Maule</strong>, que permite consultar eventos académicos, feriados y suspensiones de clases. Utiliza <strong>web scraping</strong> para obtener datos actualizados directamente de la página oficial. Incluye un filtro para ver solo los días en que se suspenden actividades. Próximamente, se integrará un sistema de <strong>notificaciones</strong> personalizadas. Actualmente en fase de <strong>closed testing</strong> en Google Play. Durante su desarrollo, aprendí a implementar scraping y optimizar interfaces centradas en la experiencia del usuario.
-                    </p>
-                    <a href="https://play.google.com/store/apps/details?id=dev.pcurz.ucmobile" class="project-link">
-                        <i class="fab fa-google-play"></i> Ver en Google Play
-                    </a>
-                    <div class="tech-icons">
-                        <i class="fab fa-flutter"></i>
-                        <i class="fas fa-database"></i>
-                        <i class="fab fa-google"></i>
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-title">
+                    <img src="icons/ucmobile.png" alt="UCalendarMobile Icono" class="project-icon">
+                    <h4>UCalendarMobile</h4>
                 </div>
-                <div class="project-card">
-                    <div class="project-title">
-                        <h4>FallWatcher</h4>
-                    </div>
-                    <p>
-                        Proyecto IoT para la <strong>detección de caídas</strong> en <strong>adultos mayores</strong>, utilizando dispositivos <strong>ESP8266</strong> y una app en <strong>Flutter</strong>. Mi rol fue integrar la aplicación, el <strong>backend</strong> y los <strong>dispositivos IoT</strong>. El sistema envía <strong>notificaciones</strong> instantáneas al detectar caídas y permite a los cuidadores confirmar el estado del adulto mayor. Durante este proyecto, aprendí a gestionar <strong>comunicación en tiempo real</strong> y a implementar <strong>notificaciones push</strong>, mejorando la sincronización y confiabilidad de los datos.
-                    </p>
-                    <a href="https://github.com/pcurz/FallWatcher" class="project-link">
-                        <i class="fab fa-github"></i> Ver en GitHub
-                    </a>
-                    <div class="tech-icons">
-                        <i class="fab fa-flutter"></i>
-                        <i class="fas fa-microchip"></i>
-                        <i class="fas fa-network-wired"></i>
-                        <i class="fab fa-node-js"></i>
-                        <i class="fas fa-bell"></i>                        
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-title">
-                        <h4>Basho</h4>
-                    </div>
-                    <p>
-                        Plataforma actualmente en desarrollo para el monitoreo en tiempo real de vehículos, personas y mascotas utilizando dispositivos ESP8266. Mi rol es la implementación del backend con <strong>Firebase</strong> para autenticación y la configuración de un servidor <strong>MQTT</strong> para la comunicación en tiempo real. El proyecto incluye funcionalidades de geocercas y colaboración comunitaria.
-                    </p>
-                    <div class="tech-icons">
-                        <i class="fab fa-js-square"></i>
-                        <i class="fab fa-node-js"></i>
-                        <i class="fas fa-microchip"></i>
-                        <i class="fab fa-android"></i>
-                        <i class="fab fa-flutter"></i>
-                        <i class="fas fa-network-wired"></i>
-                    </div>
+                <a href="https://play.google.com/store/apps/details?id=dev.pcurz.ucmobile" class="project-link">
+                    <i class="fab fa-google-play"></i> Ver en Google Play
+                </a>
+                <p class="project-description">
+                    App para estudiantes de la <strong>UCM</strong> que muestra <strong>eventos académicos</strong>, 
+                    <strong>feriados</strong> y <strong>suspensiones</strong>. Filtra días sin clases y pronto integrará 
+                    <strong>notificaciones personalizadas</strong>. Actualmente en <strong>closed testing</strong> en Google Play.
+                </p>
+                <div class="screenshot-container">
+                    <img src="images/ucmobile1.png" alt="UCalendarMobile Screenshot" class="project-screenshot">
                 </div>
             </div>
-        </section>
+        
+            <div class="project-card">
+                <div class="project-title">
+                    <h4>FallWatcher</h4>
+                </div>
+                <a href="https://github.com/pcurz/FallWatcher" class="project-link">
+                    <i class="fab fa-github"></i> Ver en GitHub
+                </a>
+                <p class="project-description">
+                    Proyecto IoT para detectar <strong>caídas</strong> en <strong>adultos mayores</strong> usando <strong>ESP8266</strong> y <strong>Flutter</strong>. 
+                    Integré la <strong>app</strong>, <strong>backend</strong> y <strong>dispositivos IoT</strong>, logrando <strong>notificaciones instantáneas</strong> 
+                    para cuidadores y confirmación del estado.
+                </p>
+                <div class="screenshot-container">
+                    <video class="project-screenshot" autoplay loop muted playsinline>
+                        <source src="videos/fallwatcher.webm" type="video/webm">
+                        Tu navegador no soporta el formato de video.
+                    </video>
+                </div>
+            </div>
+        
+            <div class="project-card">
+                <div class="project-title">
+                    <h4>Basho</h4>
+                </div>
+                <p class="project-description">
+                    Plataforma en desarrollo para <strong>monitoreo en tiempo real</strong> de vehículos, personas y mascotas con <strong>ESP8266</strong>, 
+                    usando <strong>Firebase</strong> y <strong>MQTT</strong>.
+                </p>
+            </div>
+        </div>
+        
     </main>
 </body>
 </html>

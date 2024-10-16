@@ -13,6 +13,7 @@
     --on-surface: #ffffff;
     --on-error: #000000;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -118,12 +119,11 @@ main {
     color: var(--on-surface);
 }
 
-.project-cards {
+.projects-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     justify-content: space-between;
-    width: 100%;
+    gap: 20px;
 }
 
 .project-card {
@@ -132,6 +132,11 @@ main {
     padding: 20px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     width: calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
     box-sizing: border-box;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -139,6 +144,30 @@ main {
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.project-description {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--on-surface);
+}
+
+.screenshot-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+}
+
+.project-screenshot {
+    width: 75%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    object-fit: cover;
 }
 
 .project-title {
@@ -151,6 +180,29 @@ main {
     height: 50px;
     border-radius: 50%;
     margin-right: 15px;
+}
+
+a.project-link {
+    background-color: var(--primary-color);
+    color: var(--on-primary);
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+a.project-link i {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+a.project-link:hover {
+    background-color: var(--primary-variant);
+    transform: translateY(-2px);
 }
 
 .tech-icons {
@@ -170,25 +222,23 @@ main {
     color: var(--primary-variant);
 }
 
-a.project-link {
-    color: var(--secondary-color);
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-a.project-link:hover {
-    color: var(--primary-color);
-    transform: translateX(5px);
-}
-
 @media (max-width: 600px) {
-    .header-container, .project-cards {
+    .projects-container {
         flex-direction: column;
+        gap: 30px;
     }
 
     .project-card {
         width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .project-link {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .project-description {
+        font-size: 15px;
     }
 }
