@@ -4,80 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="sticky">
-        <div class="header-container">
-            <div class="profile-img">
-                <img src="images/me.png" alt="Foto de Patricio Campos">
-            </div>
-            <h1 class="profile-name">Patricio Campos</h1>
-            <nav>
-                <a href="https://www.linkedin.com/in/campos-p" class="contact-link"><i class="fab fa-linkedin"></i>LinkedIn</a>
-                <a href="https://github.com/pcurz" class="contact-link"><i class="fab fa-github"></i>GitHub</a>
-                <a href="mailto:campos.p@proton.me" class="contact-link"><i class="fas fa-envelope"></i>campos.p@proton.me</a>
-            </nav>
+    <header>
+        <div class="profile">
+            <img src="images/me.png" alt="Foto de Patricio Campos" class="profile-img">
+            <h1>Patricio Campos</h1>
         </div>
+        <nav class="contact-links">
+            <a href="https://www.linkedin.com/in/campos-p" class="contact-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/pcurz" class="contact-link">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="mailto:campos.p@proton.me" class="contact-link">
+                <i class="fas fa-envelope"></i> campos.p@proton.me
+            </a>
+        </nav>
     </header>
     <main>
-        <section class="about-me">
+        <section class="card">
             <h2>Sobre mí</h2>
-            <p>
-                <p>Soy un <strong>apasionado estudiante de Ingeniería Civil Informática</strong> a punto de egresar, con especialización en <strong>desarrollo móvil con Flutter</strong>. Aunque mi enfoque principal ha sido el desarrollo móvil, también tengo experiencia manejando <strong>frameworks web como React</strong> y <strong>creando backends con Express</strong>, utilizando <strong>MySQL</strong> y <strong>PostgreSQL</strong>. He desarrollado <strong>scripts en Node.js</strong> para automatizar tareas repetitivas en el navegador, optimizando procesos.</p>
+            <p>Soy un <strong>apasionado estudiante</strong> de <strong>Ingeniería Civil Informática</strong> a punto de egresar, con una <strong>mentalidad orientada</strong> a identificar problemas y <strong>construir soluciones funcionales</strong>. Además de <strong>desarrollar software</strong>, también sé <strong>administrar servidores Linux</strong>, gestionando <strong>aplicaciones web</strong> y <strong>wikis</strong> para asegurar un <strong>funcionamiento eficiente</strong>. Busco un <strong>equilibrio entre teoría y práctica</strong>, aplicando <strong>patrones de diseño</strong> para garantizar que cada solución sea <strong>escalable</strong> y <strong>sostenible</strong>.</p>
 
-                <p>He administrado <strong>servidores para alojar páginas hechas en React y wikis</strong>. Me apasiona <strong>resolver problemas reales,</strong> y disfruto <strong>colaborar en equipos</strong> para construir <strong>soluciones funcionales e innovadoras</strong>. Busco <strong>crecer en entornos donde pueda aportar valor</strong> y aprender junto a otros, creando proyectos que marquen la diferencia.</p>                
-            </p>
+            <p>Disfruto <strong>colaborar en equipos</strong>, convencido de que <strong>las mejores ideas</strong> surgen al combinar <strong>diferentes perspectivas</strong>. Mi objetivo es <strong>crecer en entornos</strong> donde pueda <strong>aportar valor</strong>, aprovechar <strong>nuevas tecnologías</strong> y <strong>materializar ideas innovadoras</strong> que generen un <strong>impacto real</strong>.</p>
         </section>
-        <div class="projects-container">
-            <div class="project-card">
-                <div class="project-title">
-                    <img src="icons/ucmobile.png" alt="UCalendarMobile Icono" class="project-icon">
-                    <h4>UCalendarMobile</h4>
-                </div>
-                <a href="https://play.google.com/store/apps/details?id=dev.pcurz.ucmobile" class="project-link">
-                    <i class="fab fa-google-play"></i> Disponible en Google Play
-                </a>
-                <p class="project-description">
-                    <strong>App para estudiantes de la UCM</strong> diseñada para facilitar el acceso a <strong>eventos académicos, feriados y suspensiones</strong> de actividades.  
-                        Posee un <strong>filtro</strong> que muestra solo los eventos donde se suspenden actividades, ayudando a los estudiantes a mantenerse informados.
-                </p>
-                <div class="screenshot-container">
-                    <img src="images/ucmobile1.png" alt="UCalendarMobile Screenshot" class="project-screenshot">
-                </div>
-            </div>
+        <section class="projects-carousel">
+            <button class="carousel-btn prev-btn" aria-label="Proyecto anterior">&lt;</button>
+            <div class="projects-wrapper">
+                <div class="projects">
+                    <article class="project-card">
+                        <div class="project-header">
+                            <img src="icons/ucmobile.png" alt="UCalendarMobile" class="project-icon">
+                            <h4>UCalendarMobile</h4>
+                            <a href="https://play.google.com/store/apps/details?id=dev.pcurz.ucmobile" 
+                               class="project-link-btn" aria-label="Google Play" target="_blank">
+                                <i class="fa-brands fa-google-play"></i>
+                            </a>
+                        </div>
+                        <div class="project-description">
+                            <p>
+                                Los estudiantes de la UCM necesitaban una forma más sencilla de consultar <strong>eventos académicos, feriados y suspensiones</strong>. Para solucionar esto, desarrollé una <strong>app móvil</strong> que centraliza esta información y ofrece un <strong>filtro</strong> que muestra solo los eventos con suspensión de actividades, facilitando su gestión del tiempo.
+                                La app mejora la experiencia frente a los canales oficiales al proporcionar <strong>acceso rápido a eventos relevantes</strong>.
+                            </p>
+                        </div>
+                        <div class="project-media">
+                            <img src="images/ucmobile1.png" alt="UCalendarMobile Screenshot" class="project-screenshot">
+                            <img src="images/ucmobile2.png" alt="UCalendarMobile Screenshot" class="project-screenshot">
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon-placeholder">
+                            </div>
+                            <h4>FallWatcher</h4>
+                            <a href="https://github.com/pcurz/FallWatcher" 
+                               class="project-link-btn" aria-label="GitHub" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                        <div class="project-description">
+                            <p>Desarrollamos un sistema de monitoreo en tiempo real para reducir el riesgo de caídas en personas mayores. Mientras el equipo construyó el dispositivo con un ESP8266 y un sensor IMU, además de diseñar una carcasa con <strong>impresión 3D</strong> para su uso tipo <strong>cinturón</strong>, me encargué de integrar el dispositivo con la app móvil y el servidor.</p>
+
+                            <p>Utilicé <strong>MQTT</strong> para conectar el ESP8266 con la aplicación en Flutter, añadiendo asociación mediante <strong>códigos QR</strong> para facilitar la vinculación.</p>
         
-            <div class="project-card">
-                <div class="project-title">
-                    <h4>FallWatcher</h4>
+                            <p>El sistema resultante monitorea caídas en <strong>tiempo real</strong>, permitiendo una vinculación sencilla y el envío de <strong>alertas rápidas</strong> en caso de incidentes, mejorando la seguridad de los usuarios.</p>
+                        </div>
+                        <div class="project-media">
+                            <video src="videos/fallwatcher.webm" loop autoplay muted class="project-screenshot"></video>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-header">
+                            <img src="https://play-lh.googleusercontent.com/yXaNHt0SZt_nn1AyrynMv7bbOAROROlRVNt87BAH11r3JHrEeC9NRH-GU8jNjhyWusA=w240-h480-rw" alt="UCalendarMobile" class="project-icon">
+                            <h4>VaiaFlashcardsUploader</h4>
+                            <a href="https://github.com/pcurz/VaiaFlashcardsUploader" 
+                               class="project-link-btn" aria-label="GitHub" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                        <div class="project-description">
+                            <p>
+                                Durante mis estudios, quería agilizar la creación de tarjetas educativas en la plataforma <strong>Vaia</strong>, ya que el proceso manual era lento y repetitivo. Para solucionar este problema, desarrollé <strong>VaiaFlashcardsUploader</strong>, una herramienta de automatización basada en <strong>Puppeteer</strong>.
+                            </p>
+                            <p>
+                                El proyecto automatiza el inicio de sesión y la subida de tarjetas desde un archivo <strong>JSON</strong>, permitiendo agregar múltiples tarjetas de forma rápida y sin intervención manual.
+                            </p>
+                            <p>
+                                Como resultado, logré reducir el tiempo necesario para cargar tarjetas, optimizando mi preparación para exámenes y demostrando el valor de la automatización en tareas repetitivas.
+                            </p>
+                        </div>
+                    </article>
                 </div>
-                <a href="https://github.com/pcurz/FallWatcher" class="project-link">
-                    <i class="fab fa-github"></i> Explorar en GitHub
-                </a>
-                <p class="project-description">
-                    Proyecto IoT para la <strong>detección de caídas en adultos mayores</strong> utilizando <strong>ESP8266</strong> y <strong>Flutter</strong>.  
-                        Diseñé e integré la <strong>aplicación móvil</strong>, el <strong>backend en MQTT</strong> y los <strong>dispositivos IoT</strong>, logrando  
-                        <strong>notificaciones en tiempo real</strong> para cuidadores, con confirmación del estado del usuario y seguimiento eficiente.
-                </p>
-                <div class="screenshot-container">
-                    <video class="project-screenshot" autoplay loop muted playsinline>
-                        <source src="videos/fallwatcher.webm" type="video/webm">
-                        Tu navegador no soporta el formato de video.
-                    </video>
-                </div>
-            </div>        
-            <div class="project-card">
-                <div class="project-title">
-                    <h4>Basho</h4>
-                </div>
-                <p class="project-description">
-                    Plataforma en desarrollo para <strong>monitoreo en tiempo real</strong> de vehículos, personas y mascotas con <strong>ESP8266</strong>, 
-                    usando <strong>Firebase</strong> y <strong>MQTT</strong>.
-                </p>
             </div>
-        </div>
+            <button class="carousel-btn next-btn" aria-label="Siguiente proyecto">&gt;</button>
+        </section>
     </main>
+<script src="carousel.js" defer></script>
 </body>
 </html>

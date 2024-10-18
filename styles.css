@@ -1,244 +1,268 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Google+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons&family=Roboto:wght@300;400;500;700&display=swap');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
 
 :root {
-    --primary-color: #6200ea;
-    --primary-variant: #3700b3;
-    --secondary-color: #03dac6;
-    --background-color: #121212;
-    --surface-color: #1f1b24;
-    --error-color: #cf6679;
+    --primary: #6200ea;
+    --background: #121212;
     --on-primary: #ffffff;
-    --on-secondary: #000000;
-    --on-background: #ffffff;
-    --on-surface: #ffffff;
-    --on-error: #000000;
+    --surface: #1f1b24;
 }
 
 * {
     box-sizing: border-box;
-}
-
-body, html {
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
-    color: var(--on-background);
+}
+
+body {
+    background-color: var(--background);
+    color: var(--on-primary);
     font-family: 'Roboto', sans-serif;
-    overflow-x: hidden;
 }
 
-h1, h2, h4 {
-    font-family: 'Google Sans', sans-serif;
-}
 
-h1 {
-    font-size: 2.25rem;
+header {
+    background: var(--primary);
     color: var(--on-primary);
-}
-
-h2 {
-    font-size: 1.75rem;
-    margin-bottom: 20px;
-    color: var(--on-surface);
-}
-
-h4 {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: var(--on-surface);
-}
-
-header.sticky {
-    background-color: var(--primary-color);
-    color: var(--on-primary);
-    padding: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
     position: sticky;
     top: 0;
-    width: 100%;
     z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
+.profile {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-.profile-img img {
-    width: 80px;
-    height: 80px;
+.profile-img {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    border: 2px solid var(--on-primary);
-    margin-right: 20px;
 }
 
-.profile-name {
-    font-size: 2rem;
-    font-weight: bold;
+nav.contact-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 }
 
 .contact-link {
-    margin: 0 15px;
     color: var(--on-primary);
     text-decoration: none;
     font-size: 1rem;
-    display: inline-flex;
-    align-items: center;
-    transition: color 0.3s ease;
 }
 
 .contact-link i {
-    margin-right: 8px;
+    margin-right: 5px;
 }
 
-.contact-link:hover {
-    color: var(--secondary-color);
-}
 
-main {
-    max-width: 1200px;
-    margin: 0 auto;
+.card {
     padding: 20px;
-}
-
-.about-me {
-    margin-bottom: 40px;
-    padding: 20px;
-    background-color: var(--surface-color);
+    background-color: var(--surface);
     border-radius: 10px;
+    margin: 20px auto;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    box-sizing: border-box;
 }
 
-.about-me p {
-    font-size: 1.1rem;
-    color: var(--on-surface);
-}
 
-.projects-container {
+.projects-carousel {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+    align-items: center;
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.projects-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.projects {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
 .project-card {
-    background-color: var(--surface-color);
-    border-radius: 12px;
+    min-width: 100%;
     padding: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    width: calc(33.333% - 20px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    box-sizing: border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-}
-
-.project-description {
-    flex-grow: 1;
-    margin-bottom: 20px;
-    font-size: 16px;
-    line-height: 1.5;
-    color: var(--on-surface);
-}
-
-.screenshot-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: auto;
-}
-
-.project-screenshot {
-    width: 75%;
-    max-width: 300px;
+    background-color: var(--surface);
     border-radius: 10px;
-    margin-bottom: 10px;
-    object-fit: cover;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    box-sizing: border-box;
 }
 
-.project-title {
+
+.project-header {
     display: flex;
     align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
 }
 
 .project-icon {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-right: 15px;
+    object-fit: cover;
+    overflow: hidden;
 }
 
-a.project-link {
-    background-color: var(--primary-color);
+.project-icon-placeholder {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.project-icon-placeholder img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.project-header h4 {
+    margin: 0;
+    flex: 1;
+}
+
+.project-link-btn {
+    background-color: var(--primary);
     color: var(--on-primary);
-    padding: 12px 25px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    font-size: 18px;
-    text-decoration: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-a.project-link i {
-    margin-right: 10px;
-    font-size: 24px;
+.project-link-btn:hover {
+    background-color: var(--on-primary);
+    color: var(--primary);
 }
 
-a.project-link:hover {
-    background-color: var(--primary-variant);
-    transform: translateY(-2px);
+.project-description {
+    margin-bottom: 10px;
+    padding: 10px;
 }
 
-.tech-icons {
-    margin-top: 10px;
+.project-media {
     display: flex;
-    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
 }
 
-.tech-icons i {
-    font-size: 1.5rem;
-    color: var(--secondary-color);
-    transition: transform 0.3s ease;
+.project-screenshot {
+    width: 60%;
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.tech-icons i:hover {
-    transform: scale(1.2);
-    color: var(--primary-variant);
+.carousel-btn {
+    background-color: var(--primary);
+    color: var(--on-primary);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
 }
 
-@media (max-width: 600px) {
-    .projects-container {
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.carousel-btn:hover {
+    background-color: var(--on-primary);
+    color: var(--primary);
+}
+
+
+@media (max-width: 768px) {
+    .profile {
         flex-direction: column;
-        gap: 30px;
     }
 
-    .project-card {
-        width: 100%;
-        margin-bottom: 20px;
+    nav.contact-links {
+        gap: 10px;
     }
 
-    .project-link {
-        font-size: 16px;
-        padding: 10px 20px;
+    .projects-carousel, .card, .project-card {
+        width: 95%;
+        max-width: 600px;
     }
 
-    .project-description {
-        font-size: 15px;
+    .project-screenshot {
+        width: 40%;
+    }
+
+    header {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-link {
+        font-size: 0.9rem;
+    }
+
+    .project-icon-placeholder {
+        width: 40px;
+        height: 40px;
+    }
+
+    .project-link-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+
+    header {
+        padding: 8px;
+    }
+
+    .projects-carousel, .card, .project-card {
+        width: 95%;
+        max-width: 480px;
+        margin: 10px auto;
     }
 }
