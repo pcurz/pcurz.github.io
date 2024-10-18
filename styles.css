@@ -82,6 +82,7 @@ nav.contact-links {
 
 .projects-carousel {
     display: flex;
+    flex-direction: column;
     align-items: center;
     position: relative;
     max-width: 800px;
@@ -184,6 +185,13 @@ nav.contact-links {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+.project-video {
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 .carousel-btn {
     background-color: var(--primary);
     color: var(--on-primary);
@@ -211,6 +219,25 @@ nav.contact-links {
     color: var(--primary);
 }
 
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.carousel-indicators .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--surface);
+    transition: background-color 0.3s;
+}
+
+.carousel-indicators .dot.active {
+    background-color: var(--primary);
+}
+
 
 @media (max-width: 768px) {
     .profile {
@@ -228,6 +255,15 @@ nav.contact-links {
 
     .project-screenshot {
         width: 40%;
+    }
+
+    .project-video {
+        width: 100%;
+    }
+
+    
+    .carousel-btn {
+        display: none;
     }
 
     header {
@@ -260,8 +296,12 @@ nav.contact-links {
         padding: 8px;
     }
 
+    .carousel-btn {
+        display: none;
+    }
+
     .projects-carousel, .card, .project-card {
-        width: 95%;
+        width: 90%;
         max-width: 480px;
         margin: 10px auto;
     }
