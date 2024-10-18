@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const indicatorsContainer = document.querySelector('.carousel-indicators');
 
     let currentIndex = 0;
+    let autoplayInterval;
+    let userInteracted = false;
 
     projects.forEach((_, index) => {
         const dot = document.createElement('div');
@@ -20,30 +22,54 @@ document.addEventListener('DOMContentLoaded', function () {
         const offset = -currentIndex * 100;
         projectsContainer.style.transform = `translateX(${offset}%)`;
 
-        // Actualizar los puntos activos
         dots.forEach(dot => dot.classList.remove('active'));
         dots[currentIndex].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex < projects.length - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    }
+
+    function resetAutoplay() {
+        if (autoplayInterval) clearInterval(autoplayInterval);
+        autoplayInterval = setInterval(() => {
+            if (!userInteracted) nextSlide();
+        }, 3000);
+    }
+
+    function handleUserInteraction() {
+        userInteracted = true;
+        if (autoplayInterval) clearInterval(autoplayInterval);
+        setTimeout(() => {
+            userInteracted = false;
+            resetAutoplay();
+        }, 15000);
     }
 
     prevBtn.addEventListener('click', () => {
         currentIndex = (currentIndex > 0) ? currentIndex - 1 : projects.length - 1;
         updateCarousel();
+        handleUserInteraction();
     });
 
     nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex < projects.length - 1) ? currentIndex + 1 : 0;
-        updateCarousel();
+        nextSlide();
+        handleUserInteraction();
     });
 
     const hammer = new Hammer(projectsContainer);
 
     hammer.on('swipeleft', () => {
-        currentIndex = (currentIndex < projects.length - 1) ? currentIndex + 1 : 0;
-        updateCarousel();
+        nextSlide();
+        handleUserInteraction();
     });
 
     hammer.on('swiperight', () => {
         currentIndex = (currentIndex > 0) ? currentIndex - 1 : projects.length - 1;
         updateCarousel();
+        handleUserInteraction();
     });
+
+    resetAutoplay();
 });
