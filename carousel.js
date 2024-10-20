@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (autoplayInterval) clearInterval(autoplayInterval);
         autoplayInterval = setInterval(() => {
             if (!userInteracted) nextSlide();
-        }, 3000);
+        }, 4000);
     }
 
     function handleUserInteraction() {
