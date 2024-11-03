@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const AUTO_CHANGE_INTERVAL = 5000;
+    const USER_INTERACTION_TIMEOUT = 15000;
+
     const projectsContainer = document.querySelector('.projects');
     const projects = document.querySelectorAll('.project-card');
     const prevBtn = document.querySelector('.prev-btn');
@@ -8,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentIndex = 0;
     let autoplayInterval;
     let userInteracted = false;
+    let isHovered = false;
 
     projects.forEach((_, index) => {
         const dot = document.createElement('div');
@@ -27,15 +31,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function nextSlide() {
-        currentIndex = (currentIndex < projects.length - 1) ? currentIndex + 1 : 0;
-        updateCarousel();
+        if (!isHovered) {
+            currentIndex = (currentIndex < projects.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        }
     }
 
     function resetAutoplay() {
         if (autoplayInterval) clearInterval(autoplayInterval);
         autoplayInterval = setInterval(() => {
             if (!userInteracted) nextSlide();
-        }, 4000);
+        }, AUTO_CHANGE_INTERVAL);
     }
 
     function handleUserInteraction() {
@@ -44,8 +50,18 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(() => {
             userInteracted = false;
             resetAutoplay();
-        }, 15000);
+        }, USER_INTERACTION_TIMEOUT);
     }
+
+    projectsContainer.addEventListener('mouseenter', () => {
+        isHovered = true;
+        clearInterval(autoplayInterval);
+    });
+
+    projectsContainer.addEventListener('mouseleave', () => {
+        isHovered = false;
+        resetAutoplay();
+    });
 
     prevBtn.addEventListener('click', () => {
         currentIndex = (currentIndex > 0) ? currentIndex - 1 : projects.length - 1;
