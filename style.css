@@ -1,0 +1,25 @@
+body {
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+#language-selector {
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #ccc;
+}
+
+#language-selector a {
+  cursor: pointer;
+  padding: 0.2em 0.4em;
+}
+
+#language-selector a.active {
+  font-weight: bold;
+  text-decoration: none;
+} 
