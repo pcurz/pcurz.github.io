@@ -1,6 +1,5 @@
 const translations = {
   es: {
-    pageTitle: "pcurz",
     name: "Patricio Campos",
     tagline1: "Apasionado por crear herramientas útiles y simples.",
     tagline2: "Transformo problemas reales en soluciones funcionales.",
@@ -42,7 +41,6 @@ const translations = {
     finalMessage: "Si algo de esto te sirve, o quieres conversar, escríbeme.",
   },
   en: {
-    pageTitle: "pcurz - Patricio Campos",
     name: "Patricio Campos",
     tagline1: "Passionate about creating useful and simple tools.",
     tagline2: "I transform real problems into functional solutions.",
@@ -99,9 +97,6 @@ function setLanguage(lang) {
     return;
   }
   document.documentElement.lang = lang;
-  if (translations[lang].pageTitle) {
-      document.title = translations[lang].pageTitle;
-  }
 
   document.querySelectorAll('[data-translate-key]').forEach(element => {
     const key = element.getAttribute('data-translate-key');
