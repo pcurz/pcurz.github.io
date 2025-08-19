@@ -47,7 +47,7 @@ const translations = {
     cliprotDesc1: "Plataforma que genera transmisiones 24/7 con contenido enviado por la comunidad: videos, frases y clips.",
     cliprotTech1: "FastAPI + PostgreSQL + FFmpeg en backend",
     cliprotTech2: "Frontend en React + Vite con OAuth 2.0",
-    cliprotStatus: "Inspirado en el caos creativo de Adult Swim, pero interactivo.",
+    cliprotStatus: "Inspirado en el caos creativo de [adult swim], pero interactivo.",
     
     otherHeader: "Otros",
     otherDesc1: "A veces hago pentesting por curiosidad: apps, sitios, APIs, lo que se cruce.",
@@ -106,7 +106,7 @@ const translations = {
     cliprotDesc1: "A platform that generates 24/7 streams with community-submitted content: videos, phrases, and clips.",
     cliprotTech1: "FastAPI + PostgreSQL + FFmpeg backend",
     cliprotTech2: "Frontend in React + Vite with OAuth 2.",
-    cliprotStatus: "Inspired by Adult Swim’s creative chaos, but interactive.",
+    cliprotStatus: "Inspired by [adult swim] creative chaos, but interactive.",
     
     otherHeader: "Others",
     otherDesc1: "Sometimes I do pentesting out of curiosity: apps, sites, APIs, whatever comes across.",
