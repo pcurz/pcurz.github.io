@@ -118,3 +118,65 @@ const translations = {
     finalMessage: "If any of this is useful to you, or you want to talk, write to me.",
   }
 };
+
+function updateActiveLanguageButton(lang) {
+  document.querySelectorAll('#language-selector a').forEach(a => a.classList.remove('active'));
+  const activeBtn = document.getElementById('lang-' + lang);
+  if (activeBtn) {
+    activeBtn.classList.add('active');
+  }
+}
+
+function setLanguage(lang) {
+  if (!translations[lang]) {
+    console.warn("Language " + lang + " not supported.");
+    return;
+  }
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-translate-key]').forEach(element => {
+    const key = element.getAttribute('data-translate-key');
+    if (translations[lang][key]) {
+      element.textContent = translations[lang][key];
+    } else {
+      // Fallback: if key not in target lang, try to find it in 'es' (original)
+      // Or leave it as is (original HTML content) if not in 'es' either.
+      // For simplicity here, if not found, it will just keep the current text.
+      // console.warn("Translation key " + key + " not found for language " + lang);
+    }
+  });
+  localStorage.setItem('language', lang);
+  updateActiveLanguageButton(lang);
+  // Prevent page jump from href="#"
+  return false;
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('language');
+  const browserLang = navigator.language ? navigator.language.split('-')[0] : 'es';
+  
+  let initialLang = 'es';
+  if (savedLang && translations[savedLang]) {
+      initialLang = savedLang;
+  } else if (translations[browserLang]) {
+      initialLang = browserLang;
+  }
+  // If 'es' is detected/defaulted but no 'es' translations object, it will use the HTML default text.
+  // If another lang is set, it will try to translate.
+  setLanguage(initialLang);
+
+  // Attach event listeners to language selector buttons
+  // This is needed because the onclick attributes in HTML won't work when the script is in a separate file
+  // and loaded with defer or at the end of the body without being a module.
+  // For simplicity and to ensure it works even if this script is moved or loaded differently, 
+  // we re-attach here. A more robust solution for complex apps might involve event delegation.
+  const langEsBtn = document.getElementById('lang-es');
+  if (langEsBtn) {
+    langEsBtn.onclick = () => setLanguage('es');
+  }
+  const langEnBtn = document.getElementById('lang-en');
+  if (langEnBtn) {
+    langEnBtn.onclick = () => setLanguage('en');
+  }
+}); 
