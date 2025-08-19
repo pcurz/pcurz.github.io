@@ -43,10 +43,10 @@ const translations = {
     vaiaTech1: "Puppeteer + JSON",
     vaiaAutomation: "Automatiza login y subida masiva",
 
-    cliprotProjectTitle: "Cliprot",
+    cliprotProjectTitle: "[cliprot]",
     cliprotDesc1: "Plataforma que genera transmisiones 24/7 con contenido enviado por la comunidad: videos, frases y clips.",
     cliprotTech1: "FastAPI + PostgreSQL + FFmpeg en backend",
-    cliprotTech2: "Frontend en React + Vite con autenticación",
+    cliprotTech2: "Frontend en React + Vite con OAuth 2.0",
     cliprotStatus: "Inspirado en el caos creativo de Adult Swim, pero interactivo.",
     
     otherHeader: "Otros",
@@ -102,10 +102,10 @@ const translations = {
     vaiaTech1: "Puppeteer + JSON",
     vaiaAutomation: "Automates login and bulk upload",
 
-    cliprotProjectTitle: "Cliprot",
+    cliprotProjectTitle: "[cliprot]",
     cliprotDesc1: "A platform that generates 24/7 streams with community-submitted content: videos, phrases, and clips.",
     cliprotTech1: "FastAPI + PostgreSQL + FFmpeg backend",
-    cliprotTech2: "Frontend in React + Vite with authentication",
+    cliprotTech2: "Frontend in React + Vite with OAuth 2.",
     cliprotStatus: "Inspired by Adult Swim’s creative chaos, but interactive.",
     
     otherHeader: "Others",
