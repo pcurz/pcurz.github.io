@@ -8,10 +8,12 @@ const locales = {
     projects_header: "Proyectos",
     
     cliprotProjectTitle: "[cliprot]",
-    cliprotDesc1: "Sistema de generación de contenido único e irrepetible en tiempo real. Cada video se edita de forma única usando un algoritmo interno que considera 'streaks' o rachas, entre otros factores que optimizan la experiencia del usuario.",
+    cliprotDesc1: "Canal generativo en vivo 24/7 que evolucionó de un bot de OBS a un sistema autónomo de broadcasting.",
+    cliprotDesc2: "Interludios/bumpers generados con IA usando contexto en tiempo real: viewers, video anterior, usuarios destacados, etc.",
     cliprotTech1: "FastAPI + PostgreSQL + Redis + FFmpeg workers en backend",
-    cliprotTech2: "Frontend en React + Vite con OAuth 2.0 de Discord",
-    cliprotStatus: "Los usuarios votan el contenido y afectan el stream en vivo. Distribuye automáticamente a Twitch, YouTube, Facebook, Kick, TikTok e Instagram. Todo desde un servidor casero optimizado: Xeon reciclado para CPU, Quadro P600 para encoding GPU, 64 GB RAM para escalabilidad.",
+    cliprotTech2: "Frontend en React + Vite + ChakraUI con OAuth 2.0 de Discord",
+    cliprotTech3: "Multistream con Nginx-RTMP para distribución simultánea",
+    cliprotStatus: "Contenido en tiempo real: cada video se edita de forma única, nunca igual. Sistema de votación donde los usuarios afectan el stream en vivo. Programación visible con parrilla en tiempo real. Distribuye automáticamente a Twitch, YouTube y Kick. Setup casero optimizado: Xeon E5 2640 v3 con undervolt y 3.4 GHz, Quadro P600 para encoding GPU, 64 GB RAM.",
     
     signatatProjectTitle: "SignaTat",
     signatatDesc1: "Software de escritorio para estudios de tatuajes que reemplaza formularios físicos de consentimiento por una solución digital con firma manuscrita.",
@@ -58,10 +60,12 @@ const locales = {
     projects_header: "Projects",
     
     cliprotProjectTitle: "[cliprot]",
-    cliprotDesc1: "Real-time unique and unrepeatable content generation system. Each video is edited uniquely using an internal algorithm that considers 'streaks' or patterns, among other factors that optimize user experience.",
+    cliprotDesc1: "24/7 generative live channel that evolved from an OBS bot to an autonomous broadcasting system.",
+    cliprotDesc2: "AI-generated interludes/bumpers using real-time context: viewers, previous video, top users, etc.",
     cliprotTech1: "FastAPI + PostgreSQL + Redis + FFmpeg workers backend",
-    cliprotTech2: "Frontend in React + Vite with Discord OAuth 2.0",
-    cliprotStatus: "Users vote on content and affect the live stream. Automatically distributes to Twitch, YouTube, Facebook, Kick, TikTok and Instagram. All from an optimized homemade server: recycled Xeon for CPU, Quadro P600 for GPU encoding, 64 GB RAM for scalability.",
+    cliprotTech2: "Frontend in React + Vite + ChakraUI with Discord OAuth 2.0",
+    cliprotTech3: "Multistream with Nginx-RTMP for simultaneous distribution",
+    cliprotStatus: "Real-time content: each video is edited uniquely, never the same. Voting system where users affect the live stream. Visible programming with real-time grid. Automatically distributes to Twitch, YouTube and Kick. Optimized homemade setup: Xeon E5 2640 v3 with undervolt and 3.4 GHz, Quadro P600 for GPU encoding, 64 GB RAM.",
     
     signatatProjectTitle: "SignaTat",
     signatatDesc1: "Desktop software for tattoo studios that replaces physical consent forms with a digital solution with handwritten signature.",
