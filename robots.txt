@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pcurz.github.io/sitemap.xml
+
+# Patricio Campos Portfolio
+# Desarrollador Full Stack - Builder & Product Hacker
+# Especializado en FastAPI, React, Next.js, Python, JavaScript
